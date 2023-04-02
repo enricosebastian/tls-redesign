@@ -19,4 +19,5 @@ This is the main TLS website's redesign build repository
 1. Log in using authorized credentials
 1. Maneuver to the `\developer.thelasallian.com\` folder
 1. Upload folder and unzip in same Cpanel directory
-1. Wait for reloading
+1. `Tools > Application Manager` and search for the `developer.thelasallian.com` domain. Run `Ensure Dependencies`
+1. Check `https://www.developer.thelasallian.com` for expected changes.
