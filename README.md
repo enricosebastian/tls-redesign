@@ -11,6 +11,7 @@ This is the main TLS website's redesign build repository
 1. Run `npm run dev` via CLI to start the website at https://localhost:3000
 
 ## Deploying build to Cpanel
+`Information taken from: https://www.youtube.com/watch?v=1ykSXau838c&t=401s`
 1. Delete `.next` folder and `.node_modules` folder
 1. Run `npm run build` via CLI.
 1. Zip the folder except redundant files such as `.git`, `.gitignore`, `readme.md`, and `node_modules`
