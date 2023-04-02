@@ -17,7 +17,12 @@ export default function Home({sections}) {
   )
 }
 
-export async function getStaticProps({ req, res }) {
+export async function getServerSideProps({req, res}) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
+  
   const universityResponse = await fetch('https://thelasallian.com/wp-json/wp/v2/posts?_fields=id,authors,excerpt,title,slug,categories,jetpack_featured_media_url&per_page=6&categories=4');
   const universityData = await universityResponse.json();
 
@@ -63,6 +68,5 @@ export async function getStaticProps({ req, res }) {
               },
           ],
       },
-      revalidate: 10,
   };
 }
