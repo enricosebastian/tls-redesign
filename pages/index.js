@@ -1,17 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.scss'
-import Link from 'next/link'
-
-import Section from './components/Section'
 
 export default function Home({sections}) {
-  const sectionComponents = sections.map(section => <Section key={section.name} section={section}/>)
-
   return (
     <>
-      <h1>The LaSallian</h1>
-      {sectionComponents}
+      <h1>The LaSallian - Next.js version</h1>
     </>
   )
 }
