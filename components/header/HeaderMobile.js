@@ -38,16 +38,13 @@ export default function HeaderMobile() {
     useEffect(() => {
         window.addEventListener("scroll", logPageYOffset);
         const navbar = document.querySelector(`.${header.header__wrapper__mobile}`);
-        const settings = document.querySelector(`.${header.settings__menu__mobile}`);
 
         setIsNavbarVisible(pageYOffset < navbar.offsetTop);
 
         if(isNavbarVisible) {
             navbar.classList.remove(header.sticky);
-            if(settings != null) settings.classList.remove(header.sticky__for__settings);
         } else {
             navbar.classList.add(header.sticky);
-            if(settings != null) settings.classList.add(header.sticky__for__settings);
         }
     });
 
@@ -86,12 +83,42 @@ export default function HeaderMobile() {
             {
                 settingsIsClicked ?
                 <nav className={header.settings__menu__mobile}>
-                    <div className={header.settings__choice__university}>University</div>
-                    <div className={header.settings__choice__menagerie}>Menagerie</div>
-                    <div className={header.settings__choice__sports}>Sports</div>
-                    <div className={header.settings__choice__vanguard}>Vanguard</div>
-                    <div className={header.settings__choice__opinions}>Opinions</div>
-                    <div className={header.settings__choice__about}>About</div>
+                    <a href="">
+                        <div className={header.settings__menu__choice}>
+                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
+                            University
+                        </div>
+                    </a>
+                    <a href="">
+                        <div className={header.settings__menu__choice}>
+                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
+                            Menagerie
+                        </div>
+                    </a>
+                    <a href="">
+                        <div className={header.settings__menu__choice}>
+                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
+                            Sports
+                        </div>
+                    </a>
+                    <a href="">
+                        <div className={header.settings__menu__choice}>
+                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
+                            Vanguard
+                        </div>
+                    </a>
+                    <a href="">
+                        <div className={header.settings__menu__choice}>
+                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
+                            Opinions
+                        </div>
+                    </a>
+                    <a href="">
+                        <div className={header.settings__menu__choice}>
+                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
+                            About
+                        </div>
+                    </a>
                 </nav>:
                 ""
             }
