@@ -127,10 +127,45 @@
     }
 }
 
+.settings__menu__mobile {
+    background-color: $white;
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    @media all and (max-width: 550px) {
+        top: 90px;
+    }
+
+    @media all and (max-width: 450px) {
+        top: 70px;
+    }
+
+    @media all and (max-width: 350px) {
+        top: 50px;
+    }
+
+    font-size: 30px;
+}
+
 
 // Does not follow BEM because this is a logic thing
 .sticky {
     position: fixed;
     top: 0px;
     width: 100%;
+}
+
+.sticky__for__settings {
+    top: 100px;
+    @media all and (max-width: 550px) {
+        top: 90px;
+    }
+
+    @media all and (max-width: 450px) {
+        top: 70px;
+    }
+
+    @media all and (max-width: 350px) {
+        top: 50px;
+    }
 }

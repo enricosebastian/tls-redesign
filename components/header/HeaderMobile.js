@@ -5,6 +5,7 @@ import header from '@/styles/HeaderMobile.module.scss'
 export default function HeaderMobile() {
 
     const [searchIsClicked, setSearchIsClicked] = useState(false);
+    const [settingsIsClicked, setSettingsIsClicked] = useState(false);
     const [pageYOffset, setPageYOffset] = useState(0);
     const [isNavbarVisible, setIsNavbarVisible] = useState(false)
 
@@ -37,12 +38,16 @@ export default function HeaderMobile() {
     useEffect(() => {
         window.addEventListener("scroll", logPageYOffset);
         const navbar = document.querySelector(`.${header.header__wrapper__mobile}`);
-        setIsNavbarVisible(pageYOffset < navbar.offsetHeight);
+        const settings = document.querySelector(`.${header.settings__menu__mobile}`);
+
+        setIsNavbarVisible(pageYOffset < navbar.offsetTop);
 
         if(isNavbarVisible) {
             navbar.classList.remove(header.sticky);
+            if(settings != null) settings.classList.remove(header.sticky__for__settings);
         } else {
             navbar.classList.add(header.sticky);
+            if(settings != null) settings.classList.add(header.sticky__for__settings);
         }
     });
 
@@ -50,10 +55,15 @@ export default function HeaderMobile() {
         setSearchIsClicked(!searchIsClicked);
     };
 
-    return (
-        <div className={header.header__wrapper__mobile}>
+    const openSettingsMenu = () => {
+        setSettingsIsClicked(!settingsIsClicked);
+    }
 
-            <div className={header.navbar__button__setting}><img className={header.navbar__image__setting} src="/media/svg/icon--settings.svg"/></div>
+    return (
+        <>
+            <div className={header.header__wrapper__mobile}>
+
+            <div className={header.navbar__button__setting}><img className={header.navbar__image__setting} onClick={openSettingsMenu} src="/media/svg/icon--settings.svg"/></div>
 
             <div className={header.logo__div__mobile}>
                 { searchIsClicked ?
@@ -72,6 +82,19 @@ export default function HeaderMobile() {
                 <div className={header.navbar__button__search}><img className={header.navbar__image__search} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/></div>
             }
             
-        </div>
+            </div>
+            {
+                settingsIsClicked ?
+                <nav className={header.settings__menu__mobile}>
+                    <div className={header.settings__choice__university}>University</div>
+                    <div className={header.settings__choice__menagerie}>Menagerie</div>
+                    <div className={header.settings__choice__sports}>Sports</div>
+                    <div className={header.settings__choice__vanguard}>Vanguard</div>
+                    <div className={header.settings__choice__opinions}>Opinions</div>
+                    <div className={header.settings__choice__about}>About</div>
+                </nav>:
+                ""
+            }
+        </>
     );
 }
