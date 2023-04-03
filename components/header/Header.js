@@ -15,6 +15,8 @@ export default function Header() {
             const searchEntry = searchBar.value.trim();
             if(event.key == "Enter" && searchEntry != "") {
                 console.log("Searching:",searchEntry);
+            } else if(event.key == "Escape") {
+                setSearchIsClicked(!searchIsClicked);
             }
         }
     }
@@ -26,6 +28,8 @@ export default function Header() {
     useEffect(() => {
         if(searchIsClicked) {
             window.addEventListener("keydown", searchedSomething);
+        } else {
+            window.removeEventListener("keydown", searchedSomething);
         }
 
         window.addEventListener("scroll", logPageYOffset);
