@@ -21,4 +21,12 @@
     @media all and (max-width: 800px) {
         grid-template-rows: minmax(100px, max-content) auto minmax(150px, max-content);
     }
+
+    @media all and (max-width: 550px) {
+        grid-template-rows: minmax(90px, max-content) auto minmax(150px, max-content);
+    }
+
+    @media all and (max-width: 450px) {
+        grid-template-rows: minmax(70px, max-content) auto minmax(150px, max-content);
+    }
 }
