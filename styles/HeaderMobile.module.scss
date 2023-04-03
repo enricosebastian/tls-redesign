@@ -1,0 +1,81 @@
+@import 'colors';
+
+.header__wrapper__mobile {
+    min-height: 100px;
+    background-color: $white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    border-style: solid;
+
+    border-top-width: 1px;
+    border-top-color: $gray;
+
+    border-bottom-width: 1px;
+    border-bottom-color: $gray;
+
+    border-left: none;
+    border-right: none;
+
+    .logo__div__mobile {
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        .logo__link__mobile {
+
+            .logo__image__mobile{
+                height: 50px;
+            }
+        }
+
+
+        .navbar__text__search {
+            height: 90%;
+            width: 70%;
+
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+            padding-left: 5px;
+
+            font-size: 30px;
+        }
+    }
+    
+    .navbar__button__search {
+        position: absolute;
+        right: 20px;
+
+        .navbar__image__search {
+            width: 40px;
+            height: 40px; 
+        }
+    }
+
+    .navbar__button__setting {
+        position: absolute;
+        left: 20px;
+
+        .navbar__image__setting {
+            width: 40px;
+            height: 40px; 
+        }
+    }
+}
+
+
+// Does not follow BEM because this is a logic thing
+.sticky {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
