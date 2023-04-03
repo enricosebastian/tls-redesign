@@ -13,8 +13,9 @@ export default function Header() {
 
     //Single-responsibility useEffects
     useEffect(() => {
+        setWindowWidth(window.innerWidth);
         window.addEventListener("resize", handlingWindowResize);
-    });
+    },[]);
 
     if(windowWidth < 800) {
         return <HeaderMobile/>;

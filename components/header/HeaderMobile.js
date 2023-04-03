@@ -6,8 +6,6 @@ export default function HeaderMobile() {
 
     const [searchIsClicked, setSearchIsClicked] = useState(false);
     const [settingsIsClicked, setSettingsIsClicked] = useState(false);
-    const [pageYOffset, setPageYOffset] = useState(0);
-    const [isNavbarVisible, setIsNavbarVisible] = useState(false)
 
     const searchedSomething = (event) => {
         const searchBar = document.getElementById("navbar__text__search");
@@ -22,29 +20,12 @@ export default function HeaderMobile() {
         }
     }
 
-    const logPageYOffset = () => {
-        setPageYOffset(window.pageYOffset);
-    }
-
     //Single-responsibility useEffects
     useEffect(() => {
         if(searchIsClicked) {
             window.addEventListener("keydown", searchedSomething);
         } else {
             window.removeEventListener("keydown", searchedSomething);
-        }
-    });
-
-    useEffect(() => {
-        window.addEventListener("scroll", logPageYOffset);
-        const navbar = document.querySelector(`.${header.header__wrapper__mobile}`);
-
-        setIsNavbarVisible(pageYOffset < navbar.offsetTop);
-
-        if(isNavbarVisible) {
-            navbar.classList.remove(header.sticky);
-        } else {
-            navbar.classList.add(header.sticky);
         }
     });
 
