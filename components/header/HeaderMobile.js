@@ -58,6 +58,10 @@ export default function HeaderMobile() {
 
     return (
         <>
+            <div className={header.logo__div__holder}>
+                {/* no object inside */}
+            </div>
+
             <div className={header.header__wrapper__mobile}>
 
             <div className={header.navbar__button__setting}><img className={header.navbar__image__setting} onClick={openSettingsMenu} src="/media/svg/icon--settings.svg"/></div>
@@ -83,40 +87,35 @@ export default function HeaderMobile() {
             {
                 settingsIsClicked ?
                 <nav className={header.settings__menu__mobile}>
-                    <a href="">
+                    <a className={header.settings__choices__link} href="/section/university">
                         <div className={header.settings__menu__choice}>
-                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
-                            University
+                            <div className={header.settings__menu__choices}><img className={header.settings__image__icon} src="/media/svg/icon--search.svg"/><div className={header.settings__text__choices}>University</div></div>
                         </div>
                     </a>
-                    <a href="">
+                    <a className={header.settings__choices__link} href="/section/menagerie">
                         <div className={header.settings__menu__choice}>
-                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
-                            Menagerie
+                            
+                            <div className={header.settings__menu__choices}><img className={header.settings__image__icon} src="/media/svg/icon--search.svg"/><div className={header.settings__text__choices}>Menagerie</div></div>
                         </div>
                     </a>
-                    <a href="">
+                    <a className={header.settings__choices__link} href="/section/sports">
                         <div className={header.settings__menu__choice}>
-                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
-                            Sports
+                            <div className={header.settings__menu__choices}><img className={header.settings__image__icon} src="/media/svg/icon--search.svg"/><div className={header.settings__text__choices}>Sports</div></div>
                         </div>
                     </a>
-                    <a href="">
+                    <a className={header.settings__choices__link} href="/section/vanguard">
                         <div className={header.settings__menu__choice}>
-                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
-                            Vanguard
+                            <div className={header.settings__menu__choices}><img className={header.settings__image__icon} src="/media/svg/icon--search.svg"/><div className={header.settings__text__choices}>Vanguard</div></div>
                         </div>
                     </a>
-                    <a href="">
+                    <a className={header.settings__choices__link} href="/section/opinion">
                         <div className={header.settings__menu__choice}>
-                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
-                            Opinions
+                            <div className={header.settings__menu__choices}><img className={header.settings__image__icon} src="/media/svg/icon--search.svg"/><div className={header.settings__text__choices}>Opinion</div></div>
                         </div>
                     </a>
-                    <a href="">
+                    <a className={header.settings__choices__link} href="/section/about">
                         <div className={header.settings__menu__choice}>
-                            <img className={header.settings__image__icon} onClick={changeNavbarToSearchBar} src="/media/svg/icon--search.svg"/>
-                            About
+                            <div className={header.settings__menu__choices}><img className={header.settings__image__icon} src="/media/svg/icon--search.svg"/><div className={header.settings__text__choices}>About</div></div>
                         </div>
                     </a>
                 </nav>:
