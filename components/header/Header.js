@@ -9,10 +9,13 @@ export default function Header() {
     const [isNavbarVisible, setIsNavbarVisible] = useState(false)
 
     const searchedSomething = (event) => {
-        const searchEntry = document.getElementById("navbar__text__search").value;
+        const searchBar = document.getElementById("navbar__text__search");
 
-        if(event.key == "Enter" && searchEntry.trim() != "") {
-            alert("Searching: "+searchEntry);
+        if(searchBar != null) {
+            const searchEntry = searchBar.value.trim();
+            if(event.key == "Enter" && searchEntry != "") {
+                console.log("Searching:",searchEntry);
+            }
         }
     }
 
