@@ -68,6 +68,9 @@
         .navbar__text__search {
             height: 90%;
             width: 70%;
+            @media all and (max-width: 350px) {
+                width: 60%;
+            }
 
             -moz-box-sizing: border-box;
             -webkit-box-sizing: border-box;
