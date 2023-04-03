@@ -55,9 +55,13 @@
             }
 
             .logo__link__visible {
-                .logo__image__visible {
+                .logo__image__compact {
                     height: 20px;
                     width: 100%;
+                }
+
+                .logo__image__star {
+                    width: 35px;
                 }
             }
         }

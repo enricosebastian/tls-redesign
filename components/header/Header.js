@@ -7,6 +7,8 @@ export default function Header() {
     const [searchIsClicked, setSearchIsClicked] = useState(false);
     const [pageYOffset, setPageYOffset] = useState(0);
     const [isNavbarVisible, setIsNavbarVisible] = useState(false)
+    const [windowWidth, setWindowWidth] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
 
     const searchedSomething = (event) => {
         const searchBar = document.getElementById("navbar__text__search");
@@ -25,13 +27,21 @@ export default function Header() {
         setPageYOffset(window.pageYOffset);
     }
 
+    const handlingWindowResize = () => {
+        setWindowWidth(window.innerWidth);
+    }
+
+
+    //Single-responsibility useEffects
     useEffect(() => {
         if(searchIsClicked) {
             window.addEventListener("keydown", searchedSomething);
         } else {
             window.removeEventListener("keydown", searchedSomething);
         }
+    });
 
+    useEffect(() => {
         window.addEventListener("scroll", logPageYOffset);
         const logo = document.getElementById("header__logo__full");
         const navbar = document.getElementById("header__navbar__full");
@@ -42,6 +52,10 @@ export default function Header() {
         } else {
             navbar.classList.add(header.sticky);
         }
+    });
+
+    useEffect(() => {
+        window.addEventListener("resize", handlingWindowResize);
     });
 
     const changeNavbarToSearchBar = () => {
@@ -70,7 +84,10 @@ export default function Header() {
                             <>
                             <div className={header.navbar__button__section}>
                                 <a href="/" className={header.logo__link__visible}>
-                                    <img className={header.logo__image__visible} src="/media/svg/logo--tls--mini.svg"/>
+                                    { (windowWidth < 900) ? 
+                                        <img className={header.logo__image__star} src="/media/svg/icon--tls--star.svg"/>: 
+                                        <img className={header.logo__image__compact} src="/media/svg/logo--tls--compact.svg"/>
+                                    }
                                 </a>
                             </div>
                             </>
