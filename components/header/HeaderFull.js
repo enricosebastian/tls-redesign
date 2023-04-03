@@ -30,7 +30,6 @@ export default function HeaderFull() {
         setWindowWidth(window.innerWidth);
     }
 
-
     //Single-responsibility useEffects
     useEffect(() => {
         if(searchIsClicked) {
