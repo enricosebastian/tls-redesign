@@ -1,0 +1,8 @@
+{
+    "emmet.preferences": {
+    },
+    "emmet.includeLanguages": { "javascript": "html" },
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.useInlineCompletions": true,
+    "html.format.extraLiners": "",
+}

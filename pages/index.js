@@ -1,18 +1,24 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '@/styles/Home.module.scss'
 
-import Section from '@/components/Section'
+import Header from '@/components/header/Header';
+import Body from '@/components/body/index/Body';
+import Footer from '@/components/footer/Footer';
 
 export default function Home({sections}) {
-  const sectionComponents = sections.map(section => <Section key={section.category} section={section}/>);
+
+
+
   return (
     <>
       <Head>
           <title>The LaSallian — The bastion of issue-oriented critical thinking</title>
       </Head>
-      <h1>The LaSallian - Next.js version</h1>
-      {sectionComponents}
+
+      <div className="wrapper">
+        <Header/>
+        <Body/>
+        <Footer/>
+      </div>
     </>
   )
 }
